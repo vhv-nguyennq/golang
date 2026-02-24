@@ -1,0 +1,143 @@
+# ==============================================================================
+# SAAS-PLATFORM MONOREPO MASTER GITIGNORE
+# (Tấm lưới lọc tổng cho toàn bộ dự án)
+# ==============================================================================
+
+# --- ĐẶC BIỆT: QUẢN LÝ SUBMODULES ---
+# Giữ các thư mục submodule (gitlinks) nhưng ignore các file rác phát sinh bên trong
+# khi chúng chưa được khởi tạo đúng cách.
+
+# --- DEPENDENCIES (Node.js, PNPM, Bun) ---
+**/node_modules/
+.pnpm-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+.go/pkg/mod/
+
+# --- TURBOREPO & BUILD TOOLS ---
+.turbo/
+**/dist/
+**/.next/
+**/out/
+**/build/
+**/.expo/
+**/.cache/
+**/target/
+
+# --- GO (BACKEND) ---
+# Các file thực thi sau khi build Go
+**/bin/
+**/exe/
+# Ignore các binary file của Go phát sinh trong quá trình dev/test
+**/*.test
+**/*.out
+**/coverage.txt
+# File tạm của Go Workspace nếu cần (Thường nên commit go.work nhưng ignore go.work.sum nếu muốn)
+# go.work.sum
+
+# --- BINARIES & MOCKS (Từ file cũ của bạn) ---
+*.exe
+*.dll
+*.so
+*.dylib
+# Ignore các binary thực thi trùng tên trong thư mục mocks của Subrepos
+**/mocks/**/*
+!**/mocks/**/*.go
+
+# --- ENVIRONMENT & SECRETS (QUAN TRỌNG - BẢO MẬT) ---
+# Chặn tất cả các loại file cấu hình nhạy cảm ở mọi cấp độ thư mục
+**/.env
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+**/*.env.veg
+**/.env*.local
+!**/.env.example
+
+# Shared credentials file (dùng cho script setup-env.sh)
+.env.credentials
+
+# --- IDE & EDITORS ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# --- LOGS & DIAGNOSTICS ---
+npm-debug.log*
+yarn-debug.log*
+logs/
+**/logs/
+*.log
+**/*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# --- TESTING & COVERAGE ---
+**/coverage/
+.nyc_output
+.cypress/
+
+# --- TYPESCRIPT ---
+*.tsbuildinfo
+
+# --- DOCUMENTATION & AI AGENT (Theo yêu cầu cũ của bạn) ---
+docs/diagrams/*.png
+docs/diagrams/*.svg
+docs/diagrams/*.eps
+docs/diagrams/*.pdf
+tasks/
+!tasks/README.md
+SETUP_SUMMARY.txt
+**/SETUP_SUMMARY.txt
+
+# --- TEMP & BACKUPS ---
+tmp/
+temp/
+**/backups/
+
+# --- DATABASES & DUMPS ---
+*.sql
+*.dump
+*.bak
+*.backup
+*.sqlite
+*.db
+
+# --- SECURITY & CERTIFICATES ---
+*.pem
+*.key
+*.crt
+*.p12
+*.csr
+
+# --- INFRASTRUCTURE & ORCHESTRATION ---
+docker-compose.override.yml
+kubeconfig
+*.kubeconfig
+.terraform/
+*.tfstate*
+.pnpm-store/
+
+# --- LARGE GENERATED ASSETS ---
+**/public/uploads/
+**/storage/uploads/
+**/uploads/
+
+# --- GENERATED FILES ---
+*.gen.go
+**/generated/
+**/migrations/*.sql
+

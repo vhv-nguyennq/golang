@@ -1,0 +1,7 @@
+go 1.25.5
+
+use (
+	./go/apps/gateway
+	// ./go/apps/media
+	./go/packages/shared
+)

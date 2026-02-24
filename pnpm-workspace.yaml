@@ -1,0 +1,4 @@
+packages:
+  - "react/apps/*"
+  - "react/packages/*"
+  - "resource/i18n"

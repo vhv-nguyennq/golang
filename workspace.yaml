@@ -1,0 +1,66 @@
+workspace:
+    name: cms
+    type: saas
+    version: 1.0.0
+    domain: localhost:8080
+    api_base_path: /
+defaults:
+    remote: ""
+    revision: dev
+    depth: 0
+repositories:
+    - name: go/gateway
+      path: go/apps/gateway
+      source: https://git.vhv.vn/go/gateway/cms.git
+      ref: dev
+      backend_go:
+        service_key: gateway
+        route_prefix: /
+        proto_dir: gateway
+        app_path: go/apps/gateway
+        internal_host: localhost
+        internal_port: "8080"
+        default_port: "8080"
+        timeout_ms: 30000
+    - name: go/shared
+      path: go/packages/shared
+      source: https://git.vhv.vn/go/shared
+      ref: dev
+    - name: react/authentication
+      path: react/packages/authentication
+      source: https://git.vhv.vn/react/authentication
+      ref: dev
+    - name: react/i18n
+      path: react/packages/i18n
+      source: https://git.vhv.vn/react/i18n
+      ref: dev
+    - name: docs/dev-manual
+      path: docs/dev-manual
+      source: https://git.vhv.vn/docs/dev-manual
+      ref: dev
+    - name: docs/architecture
+      path: docs/architecture
+      source: https://git.vhv.vn/docs/architecture
+      ref: dev
+    - name: templates
+      path: templates
+      source: https://git.vhv.vn/workspace/templates
+      ref: dev
+    - name: vhv/i18n
+      path: resource/i18n
+      source: https://git.vhv.vn/vhv/i18n.git
+      ref: dev
+    - name: go/media
+      path: go/apps/media
+      source: https://git.vhv.vn/go/media.git
+      ref: dev
+      backend_go:
+        service_key: media
+        route_prefix: /api/media
+        proto_dir: media
+        app_path: go/apps/media
+        internal_host: localhost
+        internal_port: "50051"
+        default_port: "50051"
+        timeout_ms: 30000
+        grpc_enabled: true

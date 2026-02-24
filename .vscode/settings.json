@@ -1,0 +1,18 @@
+{
+  "go.goroot": "${env:GOROOT}",
+  "go.alternateTools": {
+    "go": "${env:GOROOT}/bin/go"
+  },
+  "gopls": {
+    "build.buildFlags": []
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}/go/packages/shared/scripts;${env:PATH}"
+  },
+  "terminal.integrated.env.linux": {
+    "PATH": "${workspaceFolder}/go/packages/shared/scripts:${env:PATH}"
+  },
+  "terminal.integrated.env.osx": {
+    "PATH": "${workspaceFolder}/go/packages/shared/scripts:${env:PATH}"
+  }
+}

@@ -1,0 +1,26 @@
+# Submodules mẫu cho workspace mới – copy vào thư mục gốc workspace rồi chạy: git submodule update --init --recursive
+# Hoặc dùng: devctl workspace init (sau khi đã copy workspace.yaml và đổi tên repo manifest)
+
+[submodule "go/packages/shared"]
+	path = go/packages/shared
+	url = https://git.vhv.vn/go/shared
+	branch = main
+[submodule "docs/dev-manual"]
+	path = docs/dev-manual
+	url = https://git.vhv.vn/docs/dev-manual
+[submodule "docs/architecture"]
+	path = docs/architecture
+	url = https://git.vhv.vn/docs/architecture
+[submodule "templates"]
+	path = templates
+	url = https://git.vhv.vn/workspace/templates
+[submodule "resource/i18n"]
+	path = resource/i18n
+	url = https://git.vhv.vn/vhv/i18n
+	branch = main
+[submodule "go/apps/gateway"]
+	path = go/apps/gateway
+	url = https://git.vhv.vn/go/gateway/cms.git
+[submodule "go/apps/media"]
+	path = go/apps/media
+	url = https://git.vhv.vn/go/media.git
